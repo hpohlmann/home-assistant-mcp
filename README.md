@@ -48,7 +48,12 @@ Add the following configuration to your MCP configuration in Cursor:
   "mcpServers": {
     "home_assistant": {
       "command": "uv",
-      "args": ["--directory", "/path/to/your/home-assistant", "run", "main.py"],
+      "args": [
+        "--directory",
+        "/path/to/your/home-assistant-mcp",
+        "run",
+        "main.py"
+      ],
       "env": {
         "HOME_ASSISTANT_TOKEN": "your_home_assistant_token_here"
       },
@@ -80,3 +85,21 @@ Once configured, you can use Cursor AI to control your Home Assistant devices:
 
 - If you get authentication errors, verify your token is correct and has not expired
 - Check that your Home Assistant instance is reachable at the configured URL
+
+## Future Capabilities
+
+### Dynamic Entity Exposure
+
+The current implementation requires a two-step process to control devices:
+
+1. Search for entities using natural language
+2. Control the entity using its specific entity_id
+
+A planned enhancement is to create a more dynamic way to expose entities to the control devices tool, allowing the AI to:
+
+- Directly control devices through more natural commands (e.g., "turn off the kitchen lights")
+- Cache frequently used entities for faster access
+- Support more complex operations like adjusting brightness, temperature, or other attributes
+- Handle entity groups and scenes more intuitively
+
+This would significantly reduce the time to action and create a more seamless user experience when controlling Home Assistant devices through an AI assistant.
