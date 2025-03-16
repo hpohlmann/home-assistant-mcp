@@ -8,6 +8,7 @@ This MCP allows AI assistants to control your Home Assistant devices. It provide
 
 1. Search for entities in your Home Assistant instance
 2. Control devices (turn them on/off)
+3. Control light colors and brightness
 
 ## Prerequisites
 
@@ -80,11 +81,29 @@ Once configured, you can use Cursor AI to control your Home Assistant devices:
 
 - Search for devices: "Find my living room lights"
 - Control devices: "Turn on the kitchen light"
+- Control light colors: "Set my living room lights to red"
+- Adjust brightness: "Set my dining room lights to blue at 50% brightness"
+
+### Light Control Features
+
+The MCP now supports advanced light control capabilities:
+
+1. **Color Control**: Set any RGB color for compatible lights
+   - Specify colors using RGB values (0-255 for each component)
+   - Example: `set_device_color("light.living_room", 255, 0, 0)` for red
+
+2. **Brightness Control**: Adjust light brightness
+   - Optional brightness parameter (0-255)
+   - Can be combined with color changes
+   - Example: `set_device_color("light.dining_room", 0, 0, 255, brightness=128)` for medium-bright blue
 
 ## Troubleshooting
 
 - If you get authentication errors, verify your token is correct and has not expired
 - Check that your Home Assistant instance is reachable at the configured URL
+- For color control issues:
+  - Verify that your light entity supports RGB color control
+  - Check that the light is turned on before attempting to change colors
 
 ## Future Capabilities
 
