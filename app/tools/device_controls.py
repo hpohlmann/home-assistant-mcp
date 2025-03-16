@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from mcp.server.fastmcp import FastMCP
 from ..api.home_assistant import make_ha_request, get_all_entities
 from ..config import HOME_ASSISTANT_TOKEN
@@ -16,6 +16,7 @@ def init_tools(fastmcp_instance: FastMCP):
     # Register tools with the FastMCP instance
     fastmcp_instance.tool()(control_device)
     fastmcp_instance.tool()(search_entities)
+    fastmcp_instance.tool()(set_light_color)
 
 async def control_device(entity_id: str, state: str) -> str:
     """Control a Home Assistant entity by turning it on or off.
@@ -47,6 +48,36 @@ async def control_device(entity_id: str, state: str) -> str:
         return f"Successfully turned {state} {entity_id}"
     else:
         return f"Failed to control {entity_id}: {result.get('error', 'Unknown error')}"
+
+async def set_light_color(entity_id: str, red: int, green: int, blue: int) -> str:
+    """Set the color of a light entity.
+    
+    Args:
+        entity_id: The Home Assistant entity ID (must be a light)
+        red: Red component (0-255)
+        green: Green component (0-255)
+        blue: Blue component (0-255)
+    """
+    # Basic validation
+    if not entity_id or not entity_id.startswith("light."):
+        return f"Invalid entity ID: {entity_id}. Must be a light entity (format: light.entity_id)"
+    
+    # Validate RGB values
+    for color, name, value in [("red", "Red", red), ("green", "Green", green), ("blue", "Blue", blue)]:
+        if not isinstance(value, int) or not 0 <= value <= 255:
+            return f"{name} value must be an integer between 0 and 255"
+    
+    # Check token
+    if not HOME_ASSISTANT_TOKEN:
+        return "Home Assistant token not configured. Set HOME_ASSISTANT_TOKEN environment variable."
+    
+    # Call the HA API with RGB color data
+    result = await make_ha_request("light", "turn_on", entity_id, {"rgb_color": [red, green, blue]})
+    
+    if result["success"]:
+        return f"Successfully set {entity_id} to RGB({red},{green},{blue})"
+    else:
+        return f"Failed to set color for {entity_id}: {result.get('error', 'Unknown error')}"
 
 async def search_entities(description: str) -> str:
     """Search for Home Assistant entities matching a natural language description.

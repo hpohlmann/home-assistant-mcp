@@ -1,0 +1,336 @@
+{
+  "metadata": {
+    "home": "Austrheim",
+    "version": "1.0",
+    "last_updated": "2023-03-16"
+  },
+  "rooms": {
+    "living_room": {
+      "name": "Living Room",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.living_room_lights",
+            "friendly_name": "LR Ceiling Light",
+            "type": "ceiling"
+          },
+          {
+            "entity_id": "light.living_room_lights_2",
+            "friendly_name": "Living Room Lights",
+            "type": "ceiling"
+          },
+          {
+            "entity_id": "light.living_room_dining_lights",
+            "friendly_name": "Dining Lights",
+            "type": "ceiling"
+          },
+          {
+            "entity_id": "light.living_room_wall_light_west",
+            "friendly_name": "LR West Light",
+            "type": "wall"
+          },
+          {
+            "entity_id": "light.living_room_wall_light_south_west",
+            "friendly_name": "DR West Light",
+            "type": "wall"
+          },
+          {
+            "entity_id": "light.living_room_wall_light_south_east",
+            "friendly_name": "DR East Light",
+            "type": "wall"
+          },
+          {
+            "entity_id": "light.living_room_wall_light_north",
+            "friendly_name": "DR North Light",
+            "type": "wall"
+          }
+        ],
+        "switches": [
+          {
+            "entity_id": "switch.living_room_cat_lamp",
+            "friendly_name": "Living Room Cat Lamp",
+            "type": "lamp"
+          }
+        ]
+      }
+    },
+    "kitchen": {
+      "name": "Kitchen",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.central_light",
+            "friendly_name": "Kitchen Central Light",
+            "type": "ceiling"
+          },
+          {
+            "entity_id": "light.side_light",
+            "friendly_name": "Kitchen Side Light",
+            "type": "wall"
+          },
+          {
+            "entity_id": "light.sink_light",
+            "friendly_name": "Kitchen Sink Light",
+            "type": "task"
+          },
+          {
+            "entity_id": "light.kitchen_lights",
+            "friendly_name": "Kitchen Lights",
+            "type": "group"
+          }
+        ],
+        "automations": [
+          {
+            "entity_id": "automation.kitchen_switch_turned_on",
+            "friendly_name": "Kitchen Switch turned on",
+            "trigger": "switch"
+          },
+          {
+            "entity_id": "automation.kitchen_switch_turned_off",
+            "friendly_name": "Kitchen Switch turned off",
+            "trigger": "switch"
+          },
+          {
+            "entity_id": "automation.kitchen_motion_detected",
+            "friendly_name": "Kitchen Motion Detected",
+            "trigger": "motion"
+          }
+        ]
+      }
+    },
+    "master_bedroom": {
+      "name": "Master Bedroom",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.master_bedroom_lights",
+            "friendly_name": "Master Bedroom Lights",
+            "type": "group"
+          },
+          {
+            "entity_id": "light.master_bedroom_ceiling_light",
+            "friendly_name": "MB Ceiling Light",
+            "type": "ceiling"
+          },
+          {
+            "entity_id": "light.master_bedroom_bed_light_east",
+            "friendly_name": "MB East Light",
+            "type": "bedside"
+          },
+          {
+            "entity_id": "light.master_bedroom_bed_light_west",
+            "friendly_name": "MB West Light",
+            "type": "bedside"
+          }
+        ]
+      }
+    },
+    "guest_bedroom": {
+      "name": "Guest Bedroom",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.guest_bedroom_lights",
+            "friendly_name": "Guest Bedroom Lights",
+            "type": "ceiling"
+          }
+        ]
+      }
+    },
+    "exterior": {
+      "name": "Exterior",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.exterior_lights",
+            "friendly_name": "Exterior Lights",
+            "type": "outdoor"
+          }
+        ]
+      }
+    },
+    "teds_office": {
+      "name": "Ted's Office",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.teds_office_elgato_left",
+            "friendly_name": "Ted's Office Elgato Left",
+            "type": "desk"
+          },
+          {
+            "entity_id": "light.teds_office_elgato_right",
+            "friendly_name": "Ted's Office Elgato Right",
+            "type": "desk"
+          }
+        ],
+        "switches": [
+          {
+            "entity_id": "switch.teds_office_child_lock",
+            "friendly_name": "Ted's Office Child lock",
+            "type": "safety"
+          },
+          {
+            "entity_id": "switch.teds_office_socket_1",
+            "friendly_name": "Ted's Office Socket 1",
+            "type": "power"
+          }
+        ],
+        "sensors": [
+          {
+            "entity_id": "sensor.teds_office_current",
+            "friendly_name": "Ted's Office Current",
+            "type": "power"
+          },
+          {
+            "entity_id": "sensor.teds_office_power",
+            "friendly_name": "Ted's Office Power",
+            "type": "power"
+          },
+          {
+            "entity_id": "sensor.teds_office_voltage",
+            "friendly_name": "Ted's Office Voltage",
+            "type": "power"
+          }
+        ],
+        "selects": [
+          {
+            "entity_id": "select.teds_office_power_on_behaviour",
+            "friendly_name": "Ted's Office Power on behaviour",
+            "type": "config"
+          },
+          {
+            "entity_id": "select.teds_office_indicator_light_mode",
+            "friendly_name": "Ted's Office Indicator light mode",
+            "type": "config"
+          }
+        ]
+      }
+    },
+    "vivians_office": {
+      "name": "Vivian's Office",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.vivians_office_desk_light",
+            "friendly_name": "VO Desk Light",
+            "type": "desk"
+          }
+        ],
+        "switches": [
+          {
+            "entity_id": "switch.vivians_office_cat_lamp",
+            "friendly_name": "VO Cat Lamp",
+            "type": "lamp"
+          }
+        ]
+      }
+    },
+    "data_center": {
+      "name": "Data Center",
+      "devices": {
+        "switches": [
+          {
+            "entity_id": "switch.data_center_child_lock",
+            "friendly_name": "Data Center Child lock",
+            "type": "safety"
+          }
+        ]
+      }
+    },
+    "cats_room": {
+      "name": "Cats Room",
+      "devices": {
+        "lights": [
+          {
+            "entity_id": "light.lightbulb_13",
+            "friendly_name": "Cat Litter Light",
+            "type": "task"
+          },
+          {
+            "entity_id": "light.cats_room_lights",
+            "friendly_name": "Cats Room Lights",
+            "type": "ceiling"
+          }
+        ],
+        "buttons": [
+          {
+            "entity_id": "button.lightbulb_identify_13",
+            "friendly_name": "Cat Litter Light Identify",
+            "type": "control"
+          }
+        ]
+      }
+    }
+  },
+  "scenes": {
+    "evening": {
+      "name": "Evening",
+      "description": "Warm lighting for evening relaxation",
+      "light_settings": {
+        "color": {
+          "r": 255,
+          "g": 160,
+          "b": 80
+        },
+        "brightness": 80
+      },
+      "rooms": ["living_room", "kitchen", "master_bedroom"]
+    },
+    "morning": {
+      "name": "Morning",
+      "description": "Bright, cool lighting for morning productivity",
+      "light_settings": {
+        "color": {
+          "r": 200,
+          "g": 220,
+          "b": 255
+        },
+        "brightness": 100
+      },
+      "rooms": ["living_room", "kitchen"]
+    },
+    "movie": {
+      "name": "Movie",
+      "description": "Dim lighting for movie watching",
+      "light_settings": {
+        "color": {
+          "r": 100,
+          "g": 50,
+          "b": 255
+        },
+        "brightness": 30
+      },
+      "rooms": ["living_room"]
+    },
+    "red_alert": {
+      "name": "Red Alert",
+      "description": "All living room lights in red",
+      "light_settings": {
+        "color": {
+          "r": 255,
+          "g": 0,
+          "b": 0
+        },
+        "brightness": 100
+      },
+      "rooms": ["living_room"]
+    }
+  },
+  "device_types": {
+    "lights": {
+      "ceiling": "Mounted on ceiling",
+      "wall": "Mounted on wall",
+      "desk": "Positioned on desk",
+      "bedside": "Located beside bed",
+      "task": "Specific purpose lighting",
+      "outdoor": "Exterior lighting",
+      "group": "Group of multiple lights"
+    },
+    "switches": {
+      "lamp": "Controls a lamp",
+      "power": "Controls power to a device",
+      "safety": "Safety-related switch"
+    }
+  }
+} 
