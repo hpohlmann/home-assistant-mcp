@@ -1,4 +1,5 @@
 # Home Assistant MCP
+[![smithery badge](https://smithery.ai/badge/@hpohlmann/home-assistant-mcp)](https://smithery.ai/server/@hpohlmann/home-assistant-mcp)
 
 A Model Context Protocol (MCP) integration for controlling Home Assistant devices using AI assistants.
 
@@ -18,6 +19,15 @@ This MCP allows AI assistants to control your Home Assistant devices. It provide
 
 ## Installation
 
+### Installing via Smithery
+
+To install Home Assistant Integration for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@hpohlmann/home-assistant-mcp):
+
+```bash
+npx -y @smithery/cli install @hpohlmann/home-assistant-mcp --client claude
+```
+
+### Manual Installation
 1. Clone this repository
 2. Set up a Python environment:
 
