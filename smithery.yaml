@@ -1,0 +1,19 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - homeAssistantToken
+    properties:
+      homeAssistantToken:
+        type: string
+        description: Home Assistant Long-Lived Access Token
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'python', args: ['main.py'], env: { HOME_ASSISTANT_TOKEN: config.homeAssistantToken } })
+  exampleConfig:
+    homeAssistantToken: YOUR_LONG_LIVED_ACCESS_TOKEN
