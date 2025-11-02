@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) integration for controlling Home Assistant devices using AI assistants.
 
+<a href="https://glama.ai/mcp/servers/@hpohlmann/home-assistant-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@hpohlmann/home-assistant-mcp/badge" alt="Home Assistant MCP server" />
+</a>
+
 ## Overview
 
 This MCP allows AI assistants to control your Home Assistant devices. It provides tools to:
